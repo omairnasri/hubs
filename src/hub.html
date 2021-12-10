@@ -82,6 +82,26 @@
         light="defaultLightsEnabled: false"
     >
         <a-assets>
+
+            <template id="inventory-object-media">
+                <a-entity
+                geometry="primitive: box; width: 1; height: 1; depth: 1"
+                material="color: red"
+                class="interactable"
+                is-remote-hover-target
+                hoverable-visuals
+                tags="isHandCollisionTarget: true; isHoldable: true; offersRemoteConstraint: true; offersHandConstraint: true;"
+                body-helper="type: dynamic; mass: 1; collisionFilterGroup: 1; collisionFilterMask: 31;"
+                shape-helper="type: box"
+                set-unowned-body-kinematic
+                floaty-object="modifyGravityOnRelease: true; autoLockOnLoad: true; gravitySpeedLimit: 0; reduceAngularFloat: true;"
+                set-yxz-order
+                destroy-at-extreme-distances
+                matrix-auto-update
+                ></a-entity>
+            </template>
+
+
             <img id="presence-count" crossorigin="anonymous" src="./assets/hud/presence-count.png">
             <img id="action-button" crossorigin="anonymous" src="./assets/hud/action_button.9.png">
             <img id="button" crossorigin="anonymous" src="./assets/hud/button.9.png">

@@ -1,3 +1,4 @@
+import { InventorySystem } from "./inventory-system";
 import { CursorTargettingSystem } from "./cursor-targetting-system";
 import { PositionAtBorderSystem } from "../components/position-at-border";
 import { BoneVisibilitySystem } from "../components/bone-visibility";
@@ -39,6 +40,7 @@ AFRAME.registerSystem("hubs-systems", {
     waitForDOMContentLoaded().then(() => {
       this.DOMContentDidLoad = true;
     });
+    this.inventorySystem = new InventorySystem(this.el);
     this.cursorTogglingSystem = new CursorTogglingSystem();
     this.interactionSfxSystem = new InteractionSfxSystem();
     this.superSpawnerSystem = new SuperSpawnerSystem();
